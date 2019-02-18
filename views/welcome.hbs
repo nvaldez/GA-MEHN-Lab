@@ -1,6 +1,20 @@
-<h1>Hello World</h1>
+{{!-- <h1>Hello World</h1>
 <form action="/" method="post">
     <label for="name">Please enter your name</label>
     <input id="name" type="text" name="name">
     <input type="submit">
-</form>
+</form> --}}
+
+<link rel="stylesheet" href="/style.css">
+
+<h1>Recipes</h1>
+{{#each recipes}}
+<h2>{{name}}</h2>
+<p><span>Description:</span><br>{{description}}</p>
+<p><span>Ingredients</span><br>{{ingredients}}</p>
+<p><span>Directions</span><br>{{directions}}</p>
+{{/each}}
+
+{{#each recipes}}
+<li>{{this.directions}}</li>
+{{/each}}

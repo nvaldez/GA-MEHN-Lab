@@ -12,6 +12,8 @@ app.use(require("./routes/index.js"));
 var mongo = require("mongodb").MongoClient;
 const url = "mongodb://localhost:27017/recipe";
 
+app.use(express.static("public"));
+
 // mongo.connect(url, function(err, database) {
 //   const db = database.db("recipe");
 //   const collection = db.collection("recipes");
