@@ -24,3 +24,9 @@ h1 {
 div {
   margin: 15px;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}

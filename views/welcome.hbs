@@ -1,35 +1,29 @@
-{{!-- <h1>Hello World</h1>
-<form action="/" method="post">
-    <label for="name">Please enter your name</label>
-    <input id="name" type="text" name="name">
-    <input type="submit">
-</form> --}}
-
-<link rel="stylesheet" href="/style.css">
-
 <div>
 
     <h1>Recipes</h1>
     {{#each recipes}}
-    <h2>{{name}}</h2>
+
+    <h2><a href="/{{_id}}">{{name}}</a></h2>
     <p><span>Description:</span><br>{{description}}</p>
     <p>
         <span>Ingredients</span>
         <br>
-        {{#each ingredients as |ingredient|}}
+        {{ingredients}}
+        {{!-- {{#each ingredients as |ingredient|}}
         <ul>
             <li>{{ingredient}}</li>
         </ul>
-        {{/each}}
+        {{/each}} --}}
     </p>
     <p>
         <span>Directions</span>
         <br>
-        {{#each directions as |instructions|}}
+        {{directions}}
+        {{!-- {{#each directions as |instructions|}}
         <ul>
             <li>{{instructions}}</li>
         </ul>
-        {{/each}}
+        {{/each}} --}}
     </p>
     {{/each}}
 </div>
