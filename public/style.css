@@ -31,8 +31,15 @@ form {
   justify-content: space-around;
 }
 
-.class {
+div > a {
   text-decoration: none;
   color: green;
   text-align: center;
+  display: block;
+  margin: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: green;
 }
