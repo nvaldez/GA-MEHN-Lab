@@ -1,18 +1,17 @@
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser");
+var mongo = require("mongodb").MongoClient;
 
 app.set("view engine", "hbs");
 
-const bodyParser = require("body-parser");
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const router = require("./routes/index.js");
 app.use(require("./routes/index.js"));
 
-var mongo = require("mongodb").MongoClient;
 const url = "mongodb://localhost:27017/recipe";
-
-app.use(express.static("public"));
 
 // mongo.connect(url, function(err, database) {
 //   const db = database.db("recipe");

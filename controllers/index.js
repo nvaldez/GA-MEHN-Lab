@@ -3,12 +3,11 @@ const Recipe = require("../models/Recipe");
 module.exports = {
   index: function(req, res) {
     Recipe.find({}).then(recipes => {
-      console.log(recipes);
       res.render("welcome", { recipes });
     });
   },
 
-  show: function(req, res) {
+  add: function(req, res) {
     res.render("add");
   },
   create: function(req, res) {
@@ -21,5 +20,17 @@ module.exports = {
 
     res.redirect("/");
     console.log(req.body);
+  },
+
+  show: (req, res) => {
+    Recipe.findOne({ _id: req.params.id }).then(recipe => {
+      res.render("show", { recipe });
+    });
+  },
+
+  delete: (req, res) => {
+    Recipe.findByIdAndRemove(req.params.id).then(recipet => {
+      res.redirect("/");
+    });
   }
 };
