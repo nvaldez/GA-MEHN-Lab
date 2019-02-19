@@ -8,7 +8,21 @@ module.exports = {
   },
 
   edit: (req, res) => {
-    res.render("edit");
+    Recipe.findOne({ _id: req.params.id }).then(recipe => {
+      res.render("edit", { recipe });
+    });
+  },
+  update: (req, res) => {
+    Recipe.findOne({ _id: req.params.id }).then(recipe => {
+      recipe.name = req.body.name;
+      recipe.description = req.body.description;
+      recipe.ingredients = req.body.ingredients;
+      recipe.directions = req.body.directions;
+
+      recipe.save(err => {
+        res.redirect(`/${req.params.id}`);
+      });
+    });
   },
   // update
   //      - PUT request, take body (i.e. form) and update DB
