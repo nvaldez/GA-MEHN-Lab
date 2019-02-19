@@ -28,9 +28,9 @@ module.exports = {
     });
   },
 
-  delete: (req, res) => {
-    Recipe.findByIdAndRemove(req.params.id).then(recipet => {
-      res.redirect("/");
-    });
-  }
-};
+//   delete: (req, res) => {
+//     Recipe.findByIdAndRemove(req.params.id).then(recipet => {
+//       res.redirect("/");
+//     });
+//   }
+// };
