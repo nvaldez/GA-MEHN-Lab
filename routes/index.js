@@ -3,7 +3,7 @@ const router = express.Router();
 const controller = require("../controllers/index.js");
 
 router.get("/", controller.index);
-router.get("/new", controller.add);
+router.get("/new", controller.new);
 router.post("/", controller.create);
 router.get("/:id", controller.show);
 router.put("/:id", controller.update);

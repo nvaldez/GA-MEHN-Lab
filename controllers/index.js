@@ -28,7 +28,7 @@ module.exports = {
   //      - PUT request, take body (i.e. form) and update DB
 
   // should be 'new'
-  add: function(req, res) {
+  new: function(req, res) {
     res.render("add");
   },
   create: function(req, res) {
