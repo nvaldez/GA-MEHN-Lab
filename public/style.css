@@ -1,3 +1,26 @@
+html {
+  background-color: cadetblue;
+}
+body {
+  margin: 0 auto;
+  width: 900px;
+  border: 5px solid green;
+  border-radius: 10px;
+  background-color: aliceblue;
+}
+
 span {
   color: green;
+  font-size: 1.5em;
+}
+
+h1 {
+  text-align: center;
+  margin: 30px;
+  color: green;
+  font-size: 2.5em;
+}
+
+div {
+  margin: 15px;
 }

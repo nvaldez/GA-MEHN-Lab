@@ -4,6 +4,7 @@ module.exports = {
   index: function(req, res) {
     // res.render("welcome");
     Recipe.find({}).then(recipes => {
+      console.log(recipes);
       res.render("welcome", { recipes });
     });
   },

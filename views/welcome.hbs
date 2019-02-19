@@ -7,14 +7,34 @@
 
 <link rel="stylesheet" href="/style.css">
 
-<h1>Recipes</h1>
-{{#each recipes}}
-<h2>{{name}}</h2>
-<p><span>Description:</span><br>{{description}}</p>
-<p><span>Ingredients</span><br>{{ingredients}}</p>
-<p><span>Directions</span><br>{{directions}}</p>
-{{/each}}
+<div>
 
+    <h1>Recipes</h1>
+    {{#each recipes}}
+    <h2>{{name}}</h2>
+    <p><span>Description:</span><br>{{description}}</p>
+    <p>
+        <span>Ingredients</span>
+        <br>
+        {{#each ingredients as |ingredient|}}
+        <ul>
+            <li>{{ingredient}}</li>
+        </ul>
+        {{/each}}
+    </p>
+    <p>
+        <span>Directions</span>
+        <br>
+        {{#each directions as |instructions|}}
+        <ul>
+            <li>{{instructions}}</li>
+        </ul>
+        {{/each}}
+    </p>
+    {{/each}}
+</div>
+
+{{!-- 
 {{#each recipes}}
-<li>{{this.directions}}</li>
-{{/each}}
+<li>{{ingredients}}</li>
+{{/each}} --}}
