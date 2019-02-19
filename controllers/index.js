@@ -7,6 +7,13 @@ module.exports = {
     });
   },
 
+  edit: (req, res) => {
+    res.render("edit");
+  },
+  // update
+  //      - PUT request, take body (i.e. form) and update DB
+
+  // should be 'new'
   add: function(req, res) {
     res.render("add");
   },
@@ -28,9 +35,11 @@ module.exports = {
     });
   },
 
-//   delete: (req, res) => {
-//     Recipe.findByIdAndRemove(req.params.id).then(recipet => {
-//       res.redirect("/");
-//     });
-//   }
-// };
+  delete: (req, res) => {
+    // console.log("working");
+
+    Recipe.findByIdAndRemove(req.params.id).then(recipe => {
+      res.redirect("/");
+    });
+  }
+};

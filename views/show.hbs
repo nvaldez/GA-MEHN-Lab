@@ -21,4 +21,11 @@
         <br>
         {{recipe.directions}}
     </p>
+
+    <form action="/{{recipe._id}}?_method=DELETE" method="post">
+        <input type="submit" value="DELETE">
+    </form>
+    {{!-- <form action="/{{recipe._id}}" method="get">
+        <input type="submit" value="DELETE">
+    </form> --}}
 </div>

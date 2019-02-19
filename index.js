@@ -2,13 +2,14 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 var mongo = require("mongodb").MongoClient;
+const methodOverride = require("method-override");
 
 app.set("view engine", "hbs");
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const router = require("./routes/index.js");
+app.use(methodOverride("_method"));
 app.use(require("./routes/index.js"));
 
 const url = "mongodb://localhost:27017/recipe";
