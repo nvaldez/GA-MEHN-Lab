@@ -1,30 +1,20 @@
 <div>
 
-    <h1>Recipes</h1>
+    <h1 class="text-white bg-primary text-center mb-3 mt-3 rounded shadow-lg">RECIPES</h1>
     {{#each recipes}}
-
-    <h2><a href="/{{_id}}">{{name}}</a></h2>
-    <p><span>Description:</span><br>{{description}}</p>
-    <p>
-        <span>Ingredients</span>
-        <br>
-        {{ingredients}}
-        {{!-- {{#each ingredients as |ingredient|}}
-        <ul>
-            <li>{{ingredient}}</li>
-        </ul>
-        {{/each}} --}}
-    </p>
-    <p>
-        <span>Directions</span>
-        <br>
-        {{directions}}
-        {{!-- {{#each directions as |instructions|}}
-        <ul>
-            <li>{{instructions}}</li>
-        </ul>
-        {{/each}} --}}
-    </p>
+    <div class="card mb-3">
+        <div class="card-body">
+            <h2 class="card-title">
+                <a class="badge badge-primar" href="/{{_id}}">{{name}}</a>
+            </h2>
+            <h5 class="card-subtitle">Description</h5>
+            <p class="card-text">{{description}}</p>
+            <h5 class="card-subtitle">Ingredients</h5>
+            <p class="card-text">{{ingredients}}</p>
+            <h5 class="card-subtitle">Directions</h5>
+            <p class="card-text">{{directions}}</p>
+        </div>
+    </div>
     {{/each}}
 </div>
 
