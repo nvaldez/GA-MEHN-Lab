@@ -24,10 +24,7 @@ module.exports = {
       });
     });
   },
-  // update
-  //      - PUT request, take body (i.e. form) and update DB
 
-  // should be 'new'
   new: function(req, res) {
     res.render("add");
   },
@@ -40,7 +37,6 @@ module.exports = {
     });
 
     res.redirect("/");
-    console.log(req.body);
   },
 
   show: (req, res) => {
