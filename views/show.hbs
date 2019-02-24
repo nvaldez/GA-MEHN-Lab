@@ -1,27 +1,33 @@
-<div>
+<div class="card">
+    <div class="card-body">
+        <h1 class="text-white bg-primary text-center mb-3 mt-3 rounded shadow-lg">RECIPES</h1>
 
-    <h1 class="text-white bg-primary text-center mb-3 mt-3 rounded shadow-lg">RECIPES</h1>
+        <h2 class="card-title">{{recipe.name}}</h2>
 
-    <h2 class="card-title">{{recipe.name}}</h2>
+        <p>
+            <h5 class="card-subtitle">Description</h5>
+            {{recipe.description}}
+        </p>
 
-    <p>
-        <h5 class="card-subtitle">Description</h5>
-        {{recipe.description}}
-    </p>
+        <p>
+            <h5 class="card-subtitle">Ingredients</h5>
+            {{recipe.ingredients}}
+        </p>
 
-    <p>
-        <h5 class="card-subtitle">Ingredients</h5>
-        {{recipe.ingredients}}
-    </p>
+        <p>
+            <h5 class="card-subtitle">Directions</h5>
+            {{recipe.directions}}
+        </p>
+    </div>
 
-    <p>
-        <h5 class="card-subtitle">Directions</h5>
-        {{recipe.directions}}
-    </p>
+</div>
+
+<div class="text-center">
 
     <form action="/{{recipe._id}}?_method=DELETE" method="post">
-        <input class="btn btn-outline-primary btn-lg btn-block" type="submit" value="DELETE">
+        <input class="btn btn-outline-primary m-3 btn-lg" type="submit" value="DELETE">
+        <a class="btn btn-outline-primary m-3 btn-lg" href="{{recipe._id}}/edit">Edit</a>
+        <a class="btn btn-outline-primary m-3 btn-lg" href="/">Home</a>
     </form>
-    <a class="btn btn-outline-primary mt-3 btn-lg btn-block" href="{{recipe._id}}/edit">Edit</a>
-    <a class="btn btn-outline-primary mt-3 btn-lg btn-block" href="/">Home</a>
+
 </div>

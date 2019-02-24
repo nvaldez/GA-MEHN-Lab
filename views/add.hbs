@@ -1,25 +1,34 @@
 <h1 class="text-white bg-primary text-center mb-3 mt-3 rounded shadow-lg">ADD RECIPES</h1>
+<div class="card">
+    <div class="card-body">
+        <form action="/" method="POST" class="auth-form">
+            <div class="form-group">
+                <h5><label for="formGroupExampleInput">Recipe Name</label></h5>
+                <input type="text" class="form-control" id="formGroupExampleInput" name="name"
+                    placeholder="Recipe Name">
+            </div>
+            <div class="form-group">
+                <h5><label for="formGroupExampleInput2">Recipe Description</label></h5>
+                <textarea class="form-control" id="formGroupExampleInput2" name="description"
+                    placeholder="Recipe Description">{{recipe.description}}</textarea>
+            </div>
+            <div class="form-group">
+                <h5><label for="formGroupExampleInput">Recipe Ingredients</label></h5>
+                <input type="text" class="form-control" id="formGroupExampleInput" type="text" name="ingredients"
+                    placeholder="Recipe Ingredients">
 
-<form action="/" method="POST" class="auth-form">
-    <div class="form-group">
-        <h5><label for="formGroupExampleInput">Recipe Name</label></h5>
-        <input type="text" class="form-control" id="formGroupExampleInput" name="name" placeholder="Recipe Name">
-    </div>
-    <div class="form-group">
-        <h5><label for="formGroupExampleInput2">Recipe Description</label></h5>
-        <textarea class="form-control" id="formGroupExampleInput2" name="description"
-            placeholder="Recipe Description">{{recipe.description}}</textarea>
-    </div>
-    <div class="form-group">
-        <h5><label for="formGroupExampleInput">Recipe Ingredients</label></h5>
-        <input type="text" class="form-control" id="formGroupExampleInput" type="text" name="ingredients"
-            placeholder="Recipe Ingredients">
+            </div>
+            <div class="form-group">
+                <h5><label for="formGroupExampleInput">Recipe Directions</label></h5>
+                <input type="text" class="form-control" id="formGroupExampleInput" type="text" name="directions"
+                    placeholder="Recipe Directions">
+            </div>
+            <div class="text-center">
+                <input type="submit" value="Submit" class="btn btn-outline-primary m-3 btn-lg" />
+                <a class="btn btn-outline-primary m-3 btn-lg" href="/">Home</a>
+            </div>
 
+        </form>
     </div>
-    <div class="form-group">
-        <h5><label for="formGroupExampleInput">Recipe Directions</label></h5>
-        <input type="text" class="form-control" id="formGroupExampleInput" type="text" name="directions"
-            placeholder="Recipe Directions">
-    </div>
-    <input type="submit" value="Submit" class="btn btn-outline-primary mt-3 btn-lg btn-block" />
-</form>
+
+</div>

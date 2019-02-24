@@ -14,14 +14,6 @@ app.use(require("./routes/index.js"));
 
 const url = "mongodb://localhost:27017/recipe";
 
-// mongo.connect(url, function(err, database) {
-//   const db = database.db("recipe");
-//   const collection = db.collection("recipes");
-//   collection.find().toArray(function(err, docs) {
-//     console.log(docs);
-//   });
-// });
-
 app.listen(4000, () => {
   console.log("\napp listening on port 4000\n\n");
 });
