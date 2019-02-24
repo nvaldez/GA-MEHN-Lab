@@ -8,4 +8,4 @@ const Recipe = new Schema({
   ingredients: String
 });
 
-module.exports = mongoose.model("Recipe", Recipe);
+module.exports = Recipe;

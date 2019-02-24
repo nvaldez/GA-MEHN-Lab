@@ -35,6 +35,7 @@ module.exports = {
       ingredients: req.body.ingredients,
       directions: req.body.directions
     });
+    console.log(name);
 
     res.redirect("/");
   },
