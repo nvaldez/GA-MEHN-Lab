@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 var mongo = require("mongodb").MongoClient;
+
 const methodOverride = require("method-override");
 
 app.set("view engine", "hbs");
@@ -11,6 +12,36 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(methodOverride("_method"));
 app.use(require("./routes/index.js"));
+
+const cookieParser = require("cookie-parser");
+const flash = require("connect-flash");
+const session = require("express-session");
+const passport = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
+
+app.use(cookieParser());
+app.use(
+  session({
+    secret: "WDI 28 IS THE BEST",
+    resave: false,
+    saveUninitialized: false
+  })
+);
+
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+
+const { User } = require("./models/index");
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+app.use(function(req, res, next) {
+  global.user = req.user;
+  res.locals.user = req.user;
+  next();
+});
 
 const url = "mongodb://localhost:27017/recipe";
 
